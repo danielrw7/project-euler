@@ -11,12 +11,16 @@
         n (Math/ceil (/ (count digits) 2))]
     (= (take n digits) (take n (reverse digits)))))
 
+(defn is_three_digits?
+  [n]
+  (= 3 (count (str n))))
+
 (defn products
   ([a b] (products a b []))
   ([a b l]
-    (if (= 0 b)
+    (if (not (is_three_digits? b))
       l
-      (if (= 0 (dec a))
+      (if (not (is_three_digits? (dec a)))
         (lazy-seq (cons (* a b) (products 999 (dec b) l)))
         (lazy-seq (cons (* a b) (products (dec a) b l)))))))
 
