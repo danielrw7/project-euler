@@ -14,6 +14,8 @@
 
 (defn loadAndInit
   "Loads a problem file by n"
+  "Run all problems: lein run"
+  "Run specific problems: lein run 1 2"
   [& args]
   (doseq
     [n args]
