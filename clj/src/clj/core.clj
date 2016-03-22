@@ -1,7 +1,7 @@
 (ns clj.core
-  (:gen-class))
+  (:gen-class)
+  (require [clj.problem1 :as problem1]))
 
 (defn -main
-  "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!"))
+  (problem1/-main))
